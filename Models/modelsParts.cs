@@ -11,3 +11,14 @@ public record ApiResponse<T>
     string message,
     string? errorCode = null
 );
+
+
+public record Dashboard(
+    int totalEqCount,
+    int brokeEqCount,
+    string eqCountString,
+    int countActiveOrders,
+    int countActiveOrdersLost,
+    int nowPlanOrders,
+    int nowCreateOrders
+);

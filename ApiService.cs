@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
+using TOIR_API.Models;
 
 namespace ToirDesktop;
 
@@ -55,4 +56,35 @@ public class ApiService
             return $"Ошибка - {ex.Message}";
         }
     }
+
+    public async Task<User?> GetMe()
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<User>>("/users/me");
+            return res?.data;
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    public async Task<Dashboard?> GetMainDashboard()
+    {
+        try
+        {
+            var response = await client.GetFromJsonAsync<ApiResponse<Dashboard>>("/dashboard");
+            return response?.data;
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+
+
 }
