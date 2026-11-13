@@ -27,7 +27,7 @@
                 <DataGrid ItemsSource="{Binding TableEq}" CanUserReorderColumns="False"
                           BorderBrush="#666" BorderThickness="1" GridLinesVisibility="All">
                     <DataGrid.Columns>
-
+                      
                       <DataGridTextColumn Header="Инвентарный номер" Width="100"
                       Binding="{Binding InventNumber}"/>
                        <DataGridTextColumn Header="Наименование" Width="*"

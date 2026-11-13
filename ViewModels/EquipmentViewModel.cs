@@ -27,6 +27,11 @@ public partial class EquipmentViewModel : ViewModelBase
 
     private async Task<string> LoadTableAsync()
     {
+        //=======Пофиксить в АПИ и в ПРИЛОЖЕНИИ=======
+        // Эндпоинты этой группы обеспечивают полный цикл
+        //  управления оборудованием на предприятии: просмотр списка
+        //   оборудования с возможностью фильтрации по цеху, статусу,
+        //    модели или поиску по инвентарному номеру
        
         var res = await ApiService.Instance.GetTableEq(SelectedStatus, SearchStr);
         if (res is null)
