@@ -3,7 +3,6 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
-using TOIR_API.Models;
 
 namespace ToirDesktop;
 
@@ -25,21 +24,22 @@ public class ApiService
         client = new HttpClient{ BaseAddress = new System.Uri(baseurl)};
     }
 
-    public async Task<string?> LoginAsync(string email, string pass)
+    public async Task<string?> LoginAsync(string email, string password)
     {
         try
         {
-            var response = await client.PostAsJsonAsync("/auth/login", new loginRequest(email, pass));
+    
+            var response = await client.PostAsJsonAsync("/auth/login", new loginRequest(email, password));
 
             var result = await response.Content.ReadFromJsonAsync<ApiResponse<AuthData>>(JsonOpts);
 
             if (result is null) return "Не удалось разобрать ответ от сервера";
 
             if (!result.success || result.data is null)
-                return result.message ?? "Неыерный login или пароль";
+                return result.message ?? "Неверный login или пароль";
 
-            AccessToken = result.data.Access;
-            RefreshToken = result.data.Refresh;
+            AccessToken = result.data.AccessToken;
+            RefreshToken = result.data.RefreshToken;
             Role = result.data.Role;
 
             client.DefaultRequestHeaders.Authorization = 
@@ -71,11 +71,11 @@ public class ApiService
         }
     }
 
-    public async Task<Dashboard?> GetMainDashboard()
+    public async Task<DashboardKPI?> GetMainDashboard()
     {
         try
         {
-            var response = await client.GetFromJsonAsync<ApiResponse<Dashboard>>("/dashboard");
+            var response = await client.GetFromJsonAsync<ApiResponse<DashboardKPI>>("/dashboard/kpi");
             return response?.data;
         }
         catch(Exception ex)

@@ -3,6 +3,7 @@
         xmlns:vm="using:ToirDesktop.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="using:ToirDesktop.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ToirDesktop.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -10,11 +11,49 @@
         Title="ToirDesktop">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Window.DataTemplates>
+        <DataTemplate DataType="vm:LoginViewModel">
+            <views:LoginView></views:LoginView>
+        </DataTemplate>
+        <DataTemplate DataType="vm:DashboardViewModel">
+            <views:DashboardView></views:DashboardView>
+        </DataTemplate>
+    </Window.DataTemplates>
+
+
+    <Panel>
+        <ContentControl Content="{Binding CurrentPage}"
+            IsVisible="{Binding IsLoginPage}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch">
+
+        </ContentControl>
+
+        <Grid RowDefinitions="50,*" IsVisible="{Binding !IsLoginPage}">
+            <Border Grid.Row="0" BorderThickness="1" BorderBrush="#666" Padding="1">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <TextBlock Text="{Binding UserName}"></TextBlock>
+                    <TextBlock Text="{Binding UserRole}"></TextBlock>
+                </StackPanel>
+            </Border>
+            <Grid ColumnDefinitions="100,*" Grid.Row="1">
+                <Border Grid.Column="0" BorderThickness="1" BorderBrush="#666" Padding="1">
+
+                </Border>
+                <Border Grid.Column="1" BorderThickness="1" Background="AliceBlue" BorderBrush="#666" Padding="1">
+                    <ContentControl Content="{Binding CurrentPage}" 
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"></ContentControl>
+                </Border>
+            </Grid>
+        </Grid>
+    </Panel>
+
+    
 
 </Window>
