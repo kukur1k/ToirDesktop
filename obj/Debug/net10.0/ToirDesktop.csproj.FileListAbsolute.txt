@@ -72,3 +72,5 @@ C:\ProfiProjects\ToirDesktop\obj\Debug\net10.0\refint\ToirDesktop.dll
 C:\ProfiProjects\ToirDesktop\obj\Debug\net10.0\ToirDesktop.pdb
 C:\ProfiProjects\ToirDesktop\obj\Debug\net10.0\ToirDesktop.genruntimeconfig.cache
 C:\ProfiProjects\ToirDesktop\obj\Debug\net10.0\ref\ToirDesktop.dll
+C:\ProfiProjects\ToirDesktop\obj\Debug\net10.0\ToirDesktop.sourcelink.json
+C:\ProfiProjects\ToirDesktop\bin\Debug\net10.0\Avalonia.Controls.DataGrid.dll

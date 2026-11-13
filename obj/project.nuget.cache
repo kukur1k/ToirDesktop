@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tzsFHI2F+Fs=",
+  "dgSpecHash": "qYhRiMAjjnQ=",
   "success": true,
   "projectFilePath": "C:\\ProfiProjects\\ToirDesktop\\ToirDesktop.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.25547.20250602\\avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.buildservices\\11.3.2\\avalonia.buildservices.11.3.2.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.controls.colorpicker\\11.3.11\\avalonia.controls.colorpicker.11.3.11.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\avalonia.controls.datagrid\\11.0.0\\avalonia.controls.datagrid.11.0.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.desktop\\11.3.11\\avalonia.desktop.11.3.11.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.diagnostics\\11.3.11\\avalonia.diagnostics.11.3.11.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\avalonia.fonts.inter\\11.3.11\\avalonia.fonts.inter.11.3.11.nupkg.sha512",

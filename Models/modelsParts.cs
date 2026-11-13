@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ToirDesktop;
 
@@ -24,6 +25,20 @@ public record DashboardKPI(
     int nowPlanOrders,
     int nowCreateOrders
 );
+
+public record TableOrderResponse(
+    string Id,
+    string Eq,
+    string Priority,
+    string ColorCodePriority,
+    string Status,
+    string StatusColor,
+    string Brigade,
+    string DateStart,
+    string Reason,
+    string Master
+);
+
 
 public class User
 {

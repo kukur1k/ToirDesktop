@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -79,6 +80,20 @@ public class ApiService
             return response?.data;
         }
         catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    public async Task<ApiResponse<List<TableOrderResponse?>>> GetTableOrders()
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<List<TableOrderResponse?>>>("/dashboard/active-orders-master");
+            return res;
+
+        } catch(Exception ex)
         {
             Console.WriteLine(ex.Message);
             return null;
