@@ -101,5 +101,19 @@ public class ApiService
     }
 
 
+    public async Task<List<EqTableItem?>> GetTableEq()
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>("/equipment");
+            return res?.data;
+            
+        }catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
 
 }

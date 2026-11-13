@@ -39,6 +39,16 @@ public record TableOrderResponse(
     string Master
 );
 
+public record EqTableItem(
+    string InventNumber,
+    string Name,
+    string Model,
+    string Manufacture,
+    string DateStartWork,
+    string EqStatus,
+    string StatusColor
+);
+
 
 public class User
 {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToirDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+134b93cbe4e166e6349f4327a73024adce067624")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e8dc9492a733c98b27f84a169d613d0b76e2f40")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToirDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToirDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

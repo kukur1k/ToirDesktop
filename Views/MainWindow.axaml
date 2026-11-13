@@ -43,7 +43,18 @@
             </Border>
             <Grid ColumnDefinitions="100,*" Grid.Row="1">
                 <Border Grid.Column="0" BorderThickness="1" BorderBrush="#666" Padding="1">
-
+                    <StackPanel Spacing="10">
+                        <Button Background="Transparent"
+                         HorizontalAlignment="Center"
+                          Command="{Binding GoToDashboardPageCommand}">
+                            <TextBlock Text="Главная"></TextBlock>
+                        </Button>
+                         <Button Background="Transparent"
+                          Command="{Binding GoToEquipmentPageCommand}"
+                          HorizontalAlignment="Center">
+                            <TextBlock Text="Оборудование"></TextBlock>
+                        </Button>
+                    </StackPanel>
                 </Border>
                 <Border Grid.Column="1" BorderThickness="1" Background="AliceBlue" BorderBrush="#666" Padding="1">
                     <ContentControl Content="{Binding CurrentPage}" 

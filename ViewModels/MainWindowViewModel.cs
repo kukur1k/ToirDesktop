@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace ToirDesktop.ViewModels;
 
@@ -29,7 +30,11 @@ public partial class MainWindowViewModel : ViewModelBase
         UserRole = role;
     }
 
+    [RelayCommand]
     public void GoToDashboardPage() => CurrentPage = new DashboardViewModel(this);
+
+   [RelayCommand]
+    public void GoToEquipmentPage() => CurrentPage = new EquipmentViewModel(this);
 
 
 

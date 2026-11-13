@@ -91,6 +91,13 @@
                           <DataGridTextColumn Header="Бригада" Binding="{Binding Brigade}" Width="*" />
                           <DataGridTextColumn Header="Дата начала" Binding="{Binding DateStart}" Width="*" />
                           <DataGridTextColumn Header="Причина" Binding="{Binding Reason}" Width="*" />
+
+                          <DataGridTemplateColumn Header="Действия" Width="*">
+                            <DataTemplate>
+                              <Button Content="Подробнее" HorizontalAlignment="Stretch"></Button>
+                            </DataTemplate>
+                          </DataGridTemplateColumn>
+                          
                       </DataGrid.Columns>
                     </DataGrid>
 

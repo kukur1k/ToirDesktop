@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ToirDesktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ToirDesktop.Views.EquipmentView"
+             x:DataType="vm:EquipmentViewModel">
+
+
+        <ScrollViewer>
+
+          <StackPanel Margin="15">
+
+           <TextBlock FontSize="16" FontWeight="Bold" Margin="10" Text="Оборудование цеха"></TextBlock>
+
+              <StackPanel HorizontalAlignment="Stretch">
+
+                <DataGrid ItemsSource="{Binding TableEq}" CanUserReorderColumns="False"
+                          BorderBrush="#666" BorderThickness="1" GridLinesVisibility="All">
+                    <DataGrid.Columns>
+
+                      <DataGridTextColumn Header="Инвентарный номер" Width="100"
+                      Binding="{Binding InventNumber}"/>
+                       <DataGridTextColumn Header="Наименование" Width="*"
+                      Binding="{Binding Name}"/>
+                       <DataGridTextColumn Header="Модель" Width="*"
+                      Binding="{Binding Model}"/>
+                         <DataGridTextColumn Header="Производство" Width="*"
+                      Binding="{Binding Manufacture}"/>
+                   
+                      <DataGridTemplateColumn Header="Статус" Width="*">
+                        <DataTemplate>
+                          <StackPanel Background="{Binding StatusColor}">
+                            <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding EqStatus}"></TextBlock>
+                          </StackPanel>
+                        </DataTemplate>
+                      </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+              </StackPanel>
+
+          </StackPanel>
+
+        </ScrollViewer>
+
+
+</UserControl>
+
+  
