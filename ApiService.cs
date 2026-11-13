@@ -72,7 +72,7 @@ public class ApiService
         }
     }
 
-    public async Task<DashboardKPI?> GetMainDashboard()
+    public async Task<DashboardKPI?> GetMainDashboardKPI()
     {
         try
         {

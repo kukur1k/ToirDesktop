@@ -11,11 +11,20 @@ public partial class DashboardViewModel : ViewModelBase
 
     [ObservableProperty] public List<TableOrderResponse?> _table = new();
     [ObservableProperty] public int _tableItemsCount = 0;
+    [ObservableProperty] public DashboardKPI? _kpi = null;
+
+    [ObservableProperty] public string? _eqCountStr = null;
+    [ObservableProperty] public int? _countActiveOrders = 0;
+    [ObservableProperty] public int? _countLostOrders = 0;
+     [ObservableProperty] public int? _nowPlanOrders = 0;
+      [ObservableProperty] public int? _nowCreateOrders = 0;
+
 
     public DashboardViewModel(MainWindowViewModel main)
     {
         _main = main;
         _ = LoadTableAsync();
+        _ = LoadKpiCard();
     }
 
     public async Task<string> LoadTableAsync()
@@ -31,5 +40,21 @@ public partial class DashboardViewModel : ViewModelBase
         Table = res.data;
         return "";
 
+    }
+
+    public async Task<string> LoadKpiCard()
+    {
+        var res = await ApiService.Instance.GetMainDashboardKPI();
+        if (res is null)
+        {
+            return "error";
+        }
+        Kpi = res;
+        EqCountStr = Kpi.eqCountString;
+        CountActiveOrders = Kpi.countActiveOrders;
+        CountLostOrders = Kpi.countActiveOrdersLost;
+        NowPlanOrders = Kpi.nowPlanOrders;
+        NowCreateOrders = Kpi.nowCreateOrders;
+        return "";
     }
 }

@@ -11,6 +11,55 @@
                 <StackPanel Margin="15">
                   <TextBlock FontSize="16" FontWeight="Bold" Margin="10" Text="Дашборд мастера"></TextBlock>
                     
+                    <TextBlock FontSize="14" FontWeight="Bold" Margin="10" Text="Карточки KPI"></TextBlock>
+
+                      <WrapPanel Orientation="Horizontal">
+                        <Border BorderBrush="#E4DDDD"
+                      BorderThickness="1"
+                      Padding="8"
+                        CornerRadius="10"
+                        Margin="10"
+                       Background="White">
+                        <StackPanel  HorizontalAlignment="Center">
+                          <TextBlock Text="Всего оборудования (активно / в ремонте)" Foreground="#666"></TextBlock>
+                          <TextBlock Text="{Binding EqCountStr}"></TextBlock>
+                        </StackPanel>
+                      </Border>
+
+
+                         <Border BorderBrush="#E4DDDD"
+                      BorderThickness="1"
+                        Padding="8"
+                        CornerRadius="10"
+                        Margin="10"
+                       Background="White">
+                        <StackPanel HorizontalAlignment="Center">
+                          <TextBlock Text="Активные заявки" Foreground="#666"></TextBlock>
+                          <TextBlock Text="{Binding CountActiveOrders, StringFormat='Активные: {0}'}"
+                        Foreground="Green"></TextBlock>
+                          <TextBlock Text="{Binding CountLostOrders, StringFormat='Просроченные: {0}'}"
+                         Foreground="Red"></TextBlock>
+                        </StackPanel>
+                      </Border>
+
+
+                         <Border BorderBrush="#E4DDDD"
+                      BorderThickness="1"
+                        Padding="8"
+                        CornerRadius="10"
+                        Margin="10"
+                       Background="White">
+                        <StackPanel  HorizontalAlignment="Center">
+                          <TextBlock Text="Заявок на сегодня" Foreground="#666"></TextBlock>
+                            <TextBlock Text="{Binding NowPlanOrders, StringFormat='Запланировано: {0}'}"></TextBlock>
+                          <TextBlock Text="{Binding NowCreateOrders, StringFormat='Создано сегодня: {0}'}"></TextBlock>
+                        </StackPanel>
+                      </Border>
+
+                      </WrapPanel>
+
+
+                    <TextBlock FontSize="14" FontWeight="Bold" Margin="10" Text="Активные заявки"></TextBlock>
                     <StackPanel HorizontalAlignment="Stretch">
                       <DataGrid ItemsSource="{Binding Table}"
                                   GridLinesVisibility="All"
