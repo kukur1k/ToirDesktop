@@ -101,13 +101,29 @@ public class ApiService
     }
 
 
-    public async Task<List<EqTableItem?>> GetTableEq()
+    public async Task<List<EqTableItem?>> GetTableEq( string status, string searchStr)
     {
+        // надо оптимизировать (можно строчку паттерна изменять в зависимости от условия)
         try
         {
-            var res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>("/equipment");
+            ApiResponse<List<EqTableItem?>> res = null;
+            if (status != "все статусы" && searchStr != string.Empty)
+            {
+                res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>($"/equipment?eqStatus={status}&modelStr={searchStr}");
+            }     
+            else if (status != "все статусы" && searchStr == string.Empty)
+            {
+                res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>($"/equipment?eqStatus={status}");
+            }
+            else if (status == "все статусы" && searchStr != string.Empty)
+            {
+                res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>($"/equipment?modelStr={searchStr}");
+            }  
+            else if (status == "все статусы" && searchStr == string.Empty)
+            {
+                res = await client.GetFromJsonAsync<ApiResponse<List<EqTableItem?>>>("/equipment");
+            }  
             return res?.data;
-            
         }catch(Exception ex)
         {
             Console.WriteLine(ex.Message);

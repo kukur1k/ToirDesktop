@@ -14,6 +14,14 @@
 
            <TextBlock FontSize="16" FontWeight="Bold" Margin="10" Text="Оборудование цеха"></TextBlock>
 
+            <StackPanel Orientation="Horizontal" Spacing="20" Margin="10">
+                <TextBlock Text="Фильтрация" FontSize="13" FontWeight="Bold"></TextBlock>
+               <ComboBox ItemsSource="{Binding Statuses}"
+              SelectedItem="{Binding SelectedStatus}" ></ComboBox>
+                <TextBox Text="{Binding SearchStr}" Watermark="Модель"></TextBox>
+                <Button Command="{Binding ClearFiltersCommand}" Content="Сбросить фильтры"></Button>
+            </StackPanel>
+           
               <StackPanel HorizontalAlignment="Stretch">
 
                 <DataGrid ItemsSource="{Binding TableEq}" CanUserReorderColumns="False"
