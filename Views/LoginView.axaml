@@ -8,11 +8,11 @@
              x:DataType="vm:LoginViewModel">
  
     
-            <Grid RowDefinitions="*,Auto,*" HorizontalAlignment="Center" VerticalAlignment="Center">
-              <TextBlock Text="ТОиР" Grid.Row="0"></TextBlock>
+            <Grid MaxHeight="250" RowSpacing="3" RowDefinitions="*,Auto,*" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <TextBlock Text="ТОиР" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
               <Grid RowDefinitions="50,50,50" Grid.Row="1">
-                <TextBox Grid.Row="0" Watermark="login" Text="{Binding Email}"></TextBox>
-                <TextBox Grid.Row="1" Watermark="Password" Text="{Binding Pass}"></TextBox> 
+                <TextBox Height="30" HorizontalAlignment="Stretch" Grid.Row="0" Watermark="login" Text="{Binding Email}"></TextBox>
+                <TextBox Height="30" HorizontalAlignment="Stretch" Grid.Row="1" Watermark="Password" Text="{Binding Pass}"></TextBox> 
                 <Grid ColumnDefinitions="*,*" Grid.Row="2">
                   <Button Grid.Column="0" Content="Войти" Command="{Binding LoginCommand}"></Button>
                   <Button Grid.Column="1" Content="Восстановить пароль"></Button>
