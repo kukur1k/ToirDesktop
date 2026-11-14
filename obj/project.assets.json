@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net10.0": {
       "Avalonia/11.3.11": {
@@ -1456,11 +1456,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\ToirDesktop.csproj",
+      "projectUniqueName": "D:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\ToirDesktop.csproj",
       "projectName": "ToirDesktop",
-      "projectPath": "d:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\ToirDesktop.csproj",
+      "projectPath": "D:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\ToirDesktop.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "d:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\obj\\",
+      "outputPath": "D:\\C#_Project\\PROFI_TRENNING\\new\\ToirDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1475,7 +1475,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -1494,7 +1493,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Avalonia": {
@@ -1825,7 +1823,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "У пакета \"Tmds.DBus.Protocol\" 0.21.2 есть известная уязвимость https://github.com/advisories/GHSA-xrw6-gwf8-vvr9 (уровень серьезности: высокий уровень)",
+      "message": "Package 'Tmds.DBus.Protocol' 0.21.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-xrw6-gwf8-vvr9",
       "libraryId": "Tmds.DBus.Protocol",
       "targetGraphs": [
         "net10.0"

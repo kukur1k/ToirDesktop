@@ -60,7 +60,7 @@
 
 
                     <TextBlock FontSize="14" FontWeight="Bold" Margin="10" Text="Активные заявки"></TextBlock>
-                    <StackPanel HorizontalAlignment="Stretch">
+                  <StackPanel HorizontalAlignment="Stretch">
                       <DataGrid ItemsSource="{Binding Table}"
                                   GridLinesVisibility="All"
                                   BorderBrush="#666" BorderThickness="1"
@@ -101,13 +101,38 @@
                       </DataGrid.Columns>
                     </DataGrid>
 
-                    </StackPanel>
+                  </StackPanel>
 
-                    <TextBlock FontSize="14" FontWeight="Bold" Margin="10" Text="Предстоящие ТО"></TextBlock>
-
-                 
+                  <TextBlock FontSize="14" FontWeight="Bold" Margin="10" Text="Предстоящие ТО"></TextBlock>
                   
-              </StackPanel>
+                  <StackPanel HorizontalAlignment="Stretch">
+                    
+                    <DataGrid ItemsSource="{Binding SheduleUpcTo}" 
+                              CanUserResizeColumns="True"
+                              IsReadOnly="True"
+                              GridLinesVisibility="All"
+                              BorderThickness="1" BorderBrush="#666">
+                      <DataGrid.Columns >
+                        <DataGridTextColumn Header="ID оборудования" Width="90" Binding="{Binding EqId}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Оборудование" Width="*" Binding="{Binding EqTitle}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Тип ТО" Width="*" Binding="{Binding TypeTo}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Плановая дата" Width="*" Binding="{Binding PlanDate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Статус" Width="*">
+                          <DataTemplate>
+                            <StackPanel Background="{Binding Color}">
+                              <TextBlock Text="{Binding Status}" HorizontalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                          </DataTemplate>
+                        </DataGridTemplateColumn>
+                        
+                      </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    
+                  
+                    </StackPanel>
+                </StackPanel>
+   
              </ScrollViewer>
              
   
