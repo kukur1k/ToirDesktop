@@ -16,8 +16,9 @@ public partial class DashboardViewModel : ViewModelBase
     [ObservableProperty] public string? _eqCountStr = null;
     [ObservableProperty] public int? _countActiveOrders = 0;
     [ObservableProperty] public int? _countLostOrders = 0;
-     [ObservableProperty] public int? _nowPlanOrders = 0;
-      [ObservableProperty] public int? _nowCreateOrders = 0;
+    [ObservableProperty] public int? _nowPlanOrders = 0;
+    [ObservableProperty] public int? _nowCreateOrders = 0;
+    [ObservableProperty] public List<SheduleUpcomingTO?> _SheduleUpcTo = new();
 
 
     public DashboardViewModel(MainWindowViewModel main)
@@ -25,6 +26,19 @@ public partial class DashboardViewModel : ViewModelBase
         _main = main;
         _ = LoadTableAsync();
         _ = LoadKpiCard();
+        _ = LoadSheduleUpcomingToAsync();
+    }
+
+    public async Task<string> LoadSheduleUpcomingToAsync()
+    {
+        var res = await ApiService.Instance.GetUpcomingTO();
+        if (res is null)
+        {
+            return "error";
+        }
+        SheduleUpcTo = res;
+        return "";
+
     }
 
     public async Task<string> LoadTableAsync()

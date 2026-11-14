@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 
+
 namespace ToirDesktop;
 
 public class ApiService
@@ -131,5 +132,21 @@ public class ApiService
         }
     }
 
+
+
+
+    public async Task<List<SheduleUpcomingTO?>> GetUpcomingTO()
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<List<SheduleUpcomingTO?>>>("/dashboard/upcoming-to");
+            return res?.data;
+        } catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+     
+    }
 
 }

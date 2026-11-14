@@ -49,6 +49,10 @@ public record EqTableItem(
     string StatusColor
 );
 
+    public record SheduleUpcomingTO(
+        int EqId, string EqTitle, string TypeTo, string PlanDate, string Status, string Color
+    );
+
 
 public class User
 {

@@ -18,23 +18,23 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToirDesktop
-build_property.ProjectDir = C:\ProfiProjects\ToirDesktop\
+build_property.ProjectDir = d:\C#_Project\PROFI_TRENNING\new\ToirDesktop\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/ProfiProjects/ToirDesktop/App.axaml]
+[d:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/ProfiProjects/ToirDesktop/Views/DashboardView.axaml]
+[d:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/DashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/ProfiProjects/ToirDesktop/Views/EquipmentView.axaml]
+[d:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/EquipmentView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/ProfiProjects/ToirDesktop/Views/LoginView.axaml]
+[d:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/LoginView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/ProfiProjects/ToirDesktop/Views/MainWindow.axaml]
+[d:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
