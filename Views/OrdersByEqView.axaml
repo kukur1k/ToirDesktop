@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:ToirDesktop.ViewModels"
+             x:Class="ToirDesktop.Views.OrdersByEqView"
+             x:DataType="vm:OrdersByEqViewModel">
+
+    <StackPanel Margin="15">
+        
+        <TextBlock FontSize="16" FontWeight="Bold" Margin="10" Text="Заявки по оборудованию"></TextBlock>
+        
+        <ItemsControl ItemsSource="{Binding WorkOrders}" HorizontalAlignment="Left">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#666" BorderThickness="1" Background="Azure" Margin="5">
+                        <StackPanel Spacing="5" Margin="10" HorizontalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{Binding Id, StringFormat='ID Оборудования: {0}'}"></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{Binding Eq, StringFormat='Наименование Оборудования: {0}'}"></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{Binding DateStart, StringFormat='Дата начала: {0}'}"></TextBlock>
+                            <Border Background="{Binding ColorCodePriority}" Padding="5">
+                                <TextBlock Text="{Binding Priority}" FontSize="16" HorizontalAlignment="Center" Margin="5"></TextBlock>
+                            </Border>
+                            <Border Background="{Binding StatusColor}" Padding="5">
+                                <TextBlock Text="{Binding Status}" FontSize="16" HorizontalAlignment="Center" Margin="5"></TextBlock>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{Binding Master, StringFormat='Мастер: {0}'}" FontSize="16"></TextBlock>
+                                <TextBlock Text="{Binding Brigade, StringFormat='Бригада: {0}'}" FontSize="16"></TextBlock>
+                            </StackPanel>
+                            <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{Binding Reason, StringFormat='Причина: {0}'}"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

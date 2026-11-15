@@ -15,6 +15,17 @@ public record ApiResponse<T>
     string? errorCode = null
 );
 
+public record WorkOrder(
+    string Id,
+    string Eq,
+    string Priority,
+    string ColorCodePriority,
+    string Status,
+    string StatusColor,
+    string Brigade,
+    string DateStart,
+    string Reason,
+    string Master);
 
 public record ItemHistoryTO(
     int Id,

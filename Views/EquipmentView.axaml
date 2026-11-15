@@ -46,11 +46,16 @@
                         </DataTemplate>
                       </DataGridTemplateColumn>
                       
-                      <DataGridTemplateColumn Header="Статус" Width="*">
+                      <DataGridTemplateColumn Header="Действия" Width="*">
                           <DataTemplate>
-                              <Button HorizontalAlignment="Stretch" Content="История ТО"
-                                      Command="{Binding $parent[UserControl].DataContext.GoToCardToCommand}"
-                                      CommandParameter="{Binding Id}"></Button>
+                              <StackPanel Orientation="Horizontal">
+                                  <Button HorizontalAlignment="Stretch" Content="История ТО"
+                                          Command="{Binding $parent[UserControl].DataContext.GoToCardToCommand}"
+                                          CommandParameter="{Binding Id}"></Button>
+                                  <Button HorizontalAlignment="Stretch" Content="Заявки"
+                                          Command="{Binding $parent[UserControl].DataContext.GoToWoByEqCommand}"
+                                          CommandParameter="{Binding Id}"></Button>
+                              </StackPanel>
                           </DataTemplate>
                       </DataGridTemplateColumn>
                     </DataGrid.Columns>

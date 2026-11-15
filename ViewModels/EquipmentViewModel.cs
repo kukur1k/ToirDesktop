@@ -70,4 +70,11 @@ public partial class EquipmentViewModel : ViewModelBase
         var id = Convert.ToInt32(eqId);
         _main.GoToHistoryCardPage(id);
     }
+    
+    [RelayCommand]
+    public void GoToWoByEq(string eqId)
+    {
+        var id = Convert.ToInt32(eqId);
+        _main.GoToOrdersByEqPage(id);
+    }
 }

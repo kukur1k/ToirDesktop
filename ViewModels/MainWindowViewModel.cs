@@ -38,6 +38,8 @@ public partial class MainWindowViewModel : ViewModelBase
     
     [RelayCommand]
     public void GoToHistoryCardPage(int eqId) => CurrentPage = new HistoryTOCardViewModel(this, eqId);
+    [RelayCommand]
+    public void GoToOrdersByEqPage(int eqId) => CurrentPage = new OrdersByEqViewModel(this, eqId);
 
 
 

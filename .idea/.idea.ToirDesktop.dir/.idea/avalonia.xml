@@ -7,6 +7,7 @@
         <entry key="Views/EquipmentView.axaml" value="ToirDesktop.csproj" />
         <entry key="Views/HistoryTOCardView.axaml" value="ToirDesktop.csproj" />
         <entry key="Views/MainWindow.axaml" value="ToirDesktop.csproj" />
+        <entry key="Views/OrdersByEqView.axaml" value="ToirDesktop.csproj" />
       </map>
     </option>
   </component>

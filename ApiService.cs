@@ -162,5 +162,19 @@ public class ApiService
             throw;
         }
     }
+    
+    public async Task<List<WorkOrder>?> GetWoByEq(int eqId)
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<List<WorkOrder>>?>($"/equipment/work-orders/{eqId}");
+            return res?.data;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+    }
 
 }

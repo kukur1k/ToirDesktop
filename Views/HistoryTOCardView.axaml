@@ -12,7 +12,7 @@
                 
                 <StackPanel Spacing="10">
                         <TextBlock Text="{Binding CardTo.EqId , StringFormat='ID оборудования: {0}'}"></TextBlock>
-                        <TextBlock Text="{Binding CardTo.EqId , StringFormat='Наименование оборудования: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding CardTo.EquipmentName , StringFormat='Наименование оборудования: {0}'}"></TextBlock>
                         
                         <StackPanel HorizontalAlignment="Left">
                                 <ItemsControl ItemsSource="{Binding CardTo.History}">
