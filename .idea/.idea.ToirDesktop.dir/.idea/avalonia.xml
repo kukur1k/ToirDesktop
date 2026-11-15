@@ -4,6 +4,9 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Views/DashboardView.axaml" value="ToirDesktop.csproj" />
+        <entry key="Views/EquipmentView.axaml" value="ToirDesktop.csproj" />
+        <entry key="Views/HistoryTOCardView.axaml" value="ToirDesktop.csproj" />
+        <entry key="Views/MainWindow.axaml" value="ToirDesktop.csproj" />
       </map>
     </option>
   </component>

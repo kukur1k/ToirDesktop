@@ -45,6 +45,14 @@
                           </StackPanel>
                         </DataTemplate>
                       </DataGridTemplateColumn>
+                      
+                      <DataGridTemplateColumn Header="Статус" Width="*">
+                          <DataTemplate>
+                              <Button HorizontalAlignment="Stretch" Content="История ТО"
+                                      Command="{Binding $parent[UserControl].DataContext.GoToCardToCommand}"
+                                      CommandParameter="{Binding Id}"></Button>
+                          </DataTemplate>
+                      </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
 

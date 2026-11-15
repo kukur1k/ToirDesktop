@@ -149,4 +149,18 @@ public class ApiService
      
     }
 
+    public async Task<HistoryCardTO> GetHistoryTo(int eqId)
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<HistoryCardTO?>>($"/dashboard/history-to/{eqId}");
+            return res?.data;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
+    }
+
 }

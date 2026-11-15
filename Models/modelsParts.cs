@@ -16,6 +16,18 @@ public record ApiResponse<T>
 );
 
 
+public record ItemHistoryTO(
+    int Id,
+    string ToTitle,
+    string Date);
+
+public record HistoryCardTO(
+    int? EqId,
+    string? EquipmentName,
+    List<ItemHistoryTO>? History
+);
+
+
 public record DashboardKPI(
     int totalEqCount,
     int brokeEqCount,
@@ -40,6 +52,7 @@ public record TableOrderResponse(
 );
 
 public record EqTableItem(
+    string Id,
     string InventNumber,
     string Name,
     string Model,

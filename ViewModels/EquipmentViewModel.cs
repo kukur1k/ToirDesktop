@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -63,4 +64,10 @@ public partial class EquipmentViewModel : ViewModelBase
         _ = LoadTableAsync();
     }
 
+    [RelayCommand]
+    public void GoToCardTo(string eqId)
+    {
+        var id = Convert.ToInt32(eqId);
+        _main.GoToHistoryCardPage(id);
+    }
 }

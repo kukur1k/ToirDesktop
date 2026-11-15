@@ -21,6 +21,9 @@
         <DataTemplate DataType="vm:DashboardViewModel">
             <views:DashboardView></views:DashboardView>
         </DataTemplate>
+        <DataTemplate DataType="vm:HistoryTOCardViewModel">
+            <views:HistoryTOCardView />
+        </DataTemplate>
     </Window.DataTemplates>
 
 

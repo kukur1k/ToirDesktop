@@ -33,6 +33,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/EquipmentView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/HistoryTOCardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/C\#_Project/PROFI_TRENNING/new/ToirDesktop/Views/LoginView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
