@@ -173,7 +173,38 @@ public class ApiService
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
-            throw;
+            return null;
+        }
+    }
+
+
+    public async Task<string?> DeleteEquipment(int eqId)
+    {
+        try
+        {
+            var result = await client.DeleteAsync("/equipment/"+eqId);
+            var str = await result.Content.ReadAsStringAsync();
+            return str;
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    public async Task<string?> PutEquipment(int eqId, EqRequest req)
+    {
+        try
+        {
+            var result = await client.PostAsJsonAsync("/equipment/"+eqId, req);
+            var str = await result.Content.ReadAsStringAsync();
+            return str;
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
         }
     }
 
