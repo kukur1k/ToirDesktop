@@ -12,6 +12,8 @@ public partial class EquipmentViewModel : ViewModelBase
     private readonly MainWindowViewModel _main;
 
     [ObservableProperty] public List<EqTableItem?> _tableEq = new();
+
+    [ObservableProperty] public EqTableItem? _selectedItem = null;
     [ObservableProperty] public int _eqItemsCount = 0; 
    
     public List<string> Statuses {get; } = new List<string>{"в работе","в ремонте", "в простое","выведено","все статусы"};
@@ -19,6 +21,10 @@ public partial class EquipmentViewModel : ViewModelBase
     [ObservableProperty] public string _searchStr = string.Empty;
 
     [ObservableProperty] public string _selectedStatus = "все статусы";
+
+    [ObservableProperty] public string _errorLoad = string.Empty;
+    [ObservableProperty] public bool _hasError = false;
+
 
     public EquipmentViewModel(MainWindowViewModel main)
     {
@@ -77,4 +83,28 @@ public partial class EquipmentViewModel : ViewModelBase
         var id = Convert.ToInt32(eqId);
         _main.GoToOrdersByEqPage(id);
     }
+
+    [RelayCommand]
+    public async Task DeleteEq()
+    {
+        if (SelectedItem is null) return;
+        var error = await ApiService.Instance.DeleteEquipment(Convert.ToInt32(SelectedItem.Id));
+        if (error is not null)
+        {
+            ErrorLoad = error;
+            HasError = true;
+        }
+        else
+        {
+            ErrorLoad = string.Empty;
+            HasError = false;
+        }
+        _ = await LoadTableAsync();
+    }
+
+    // [RelayCommand]
+    // public async Task PutEq(int eqID, EqRequest req)
+    // {
+    //     var error = await ApiService.Instance.PutEquipment(eqID, req);
+    // }
 }

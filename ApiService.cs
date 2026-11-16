@@ -182,9 +182,9 @@ public class ApiService
     {
         try
         {
-            var result = await client.DeleteAsync("/equipment/"+eqId);
-            var str = await result.Content.ReadAsStringAsync();
-            return str;
+            var response = await client.DeleteAsync("/equipment/"+eqId);
+            var res = await response.Content.ReadFromJsonAsync<ApiResponse<object?>>(JsonOpts);
+            return res.message;
         }
         catch(Exception ex)
         {

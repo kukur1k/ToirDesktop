@@ -24,7 +24,7 @@
            
               <StackPanel HorizontalAlignment="Stretch">
 
-                <DataGrid ItemsSource="{Binding TableEq}" CanUserReorderColumns="False"
+                <DataGrid ItemsSource="{Binding TableEq}" SelectedItem="{Binding SelectedItem}" CanUserReorderColumns="False"
                           BorderBrush="#666" BorderThickness="1" GridLinesVisibility="All">
                     <DataGrid.Columns>
                       
@@ -62,7 +62,8 @@
                 </DataGrid>
 
               </StackPanel>
-
+              <Button Content="Удалить оборудование" Margin="10" Command="{Binding DeleteEqCommand}"></Button>
+                <TextBlock IsVisible="{Binding HasError}" Text="{Binding ErrorLoad}" Foreground="Red"></TextBlock>
           </StackPanel>
 
         </ScrollViewer>
