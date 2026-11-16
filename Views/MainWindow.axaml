@@ -37,12 +37,31 @@
 
         </ContentControl>
 
-        <Grid RowDefinitions="50,*" IsVisible="{Binding !IsLoginPage}">
+        <Grid RowDefinitions="70,*" IsVisible="{Binding !IsLoginPage}">
             <Border Grid.Row="0" BorderThickness="1" BorderBrush="#666" Padding="1">
-                <StackPanel Orientation="Horizontal" Spacing="10">
-                    <TextBlock Text="{Binding UserName}"></TextBlock>
-                    <TextBlock Text="{Binding UserRole}"></TextBlock>
-                </StackPanel>
+                <Grid ColumnDefinitions="*,*" Margin="10 0">
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" Text="{Binding UserName}"></TextBlock>
+                    <TextBlock  VerticalAlignment="Center" Text="{Binding UserRole}"></TextBlock>
+                    </StackPanel>
+                    <Button Grid.Column="1" HorizontalAlignment="Right" Margin="1"
+                            Background="Transparent" BorderThickness="0" Padding="0">
+                        <Border Background="#C877CF" CornerRadius="25" Height="50" Width="50">
+                            <TextBlock FontSize="16" Foreground="White" FontWeight="Bold"
+                                    Text="{Binding Initial}"
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <Button.Flyout>
+                            <Flyout Placement="BottomEdgeAlignedRight">
+                                <StackPanel Spacing="5" Width="180">
+                                    <Button Content="Профиль" HorizontalAlignment="Stretch" />
+                                    <Button Content="Настройки" HorizontalAlignment="Stretch" />
+                                    <Button Content="Выйти" HorizontalAlignment="Stretch"/>
+                                </StackPanel>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid> 
             </Border>
             <Grid ColumnDefinitions="150,*" Grid.Row="1">
                 <Border Grid.Column="0" BorderThickness="1" BorderBrush="#666" Padding="1">

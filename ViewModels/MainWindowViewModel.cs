@@ -7,9 +7,12 @@ public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty] private ViewModelBase _currentPage;
     [ObservableProperty] private string _userName = "Фамилия. И.О";
-    [ObservableProperty] private string _userRole = "Master";
+    [ObservableProperty] private string _userRole = "Мастер";
+
+    [ObservableProperty] public string _workshop = "Имя цеха";
     
-   [ObservableProperty] private string _lastUpdated = "";
+    [ObservableProperty] public string _initial = "ФИ";
+    [ObservableProperty] private string _lastUpdated = "";
 
     public MainWindowViewModel()
     {
@@ -28,6 +31,10 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         UserName = fullName;
         UserRole = role;
+
+        var parts = fullName.Split(' ');
+        Initial = parts[0].Substring(0, 1).ToUpper() + parts[1].Substring(0, 1).ToUpper();
+        
     }
 
     [RelayCommand]
