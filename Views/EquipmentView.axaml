@@ -61,6 +61,9 @@
               </StackPanel>
               <Button Content="Удалить оборудование" Margin="10" Command="{Binding DeleteEqCommand}"></Button>
                 <TextBlock IsVisible="{Binding HasError}" Text="{Binding ErrorLoad}" Foreground="Red"></TextBlock>
+
+              <Button Content="изменить оборудование" Margin="10" Command="{Binding EditEqCommand}"></Button>
+                
           </StackPanel>
 
         </ScrollViewer>

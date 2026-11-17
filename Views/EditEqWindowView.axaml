@@ -1,11 +1,30 @@
-<Window xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ToirDesktop.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ToirDesktop.Views.EditEqWindowView"
-        x:DataType="vm:EditEqWindowViewModel"
-        Title="Редактирование оборудования">
+        x:DataType="vm:EditEqWindowViewModel">
 
-</Window>
+
+        <ScrollViewer>
+                <StackPanel Margin="15">
+
+                <TextBox Text="{Binding EquipmentStr.Name}" Margin="5" Watermark="Наименование"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.InvNumber}" Margin="5" Watermark="Инвентарный номер"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.Manifacture}" Margin="5" Watermark="Производитель"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.Model}" Margin="5" Watermark="Модель"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.SerialNumber}" Margin="5" Watermark="Серийный номер"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.Workshop}" Margin="5" Watermark="Цех"></TextBox>
+                <ComboBox ItemsSource="{Binding Statuses}" Margin="5" SelectedItem="{Binding EquipmentStr.Status}"></ComboBox>
+
+                <Button Margin="5" HorizontalAlignment="Stretch" Content="Сохранить" Command="{Binding SaveEqCommand}"></Button>
+
+
+        </StackPanel>
+        </ScrollViewer>
+        
+
+</UserControl>
+

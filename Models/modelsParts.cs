@@ -38,14 +38,20 @@ public record HistoryCardTO(
     List<ItemHistoryTO>? History
 );
 
- public record EqRequest(
-        string? InvNumber,
-        string? Name, string? Model,
-        string? SerialNumber, DateOnly? ExpStart,
-        DateOnly? WorkStart, string? Manifacture,
-        DateOnly? WarrancyDate, string? Workshop,
-        string? Status
-    );
+public class EqRequest
+{
+    public int Id { get; set; }
+    public string? InvNumber { get; set; }
+    public string? Name { get; set; }
+    public string? Model { get; set; }
+    public string? WorkStart { get; set; }
+    public DateOnly? ExpStart { get; set; }
+    public string? Manifacture { get; set; }
+    public DateOnly? Warrancy { get; set; }
+    public string? SerialNumber { get; set; }
+    public string? Workshop { get; set; }
+    public string? Status { get; set; }
+}
 
 public record DashboardKPI(
     int totalEqCount,
@@ -78,7 +84,8 @@ public record EqTableItem(
     string Manufacture,
     string DateStartWork,
     string EqStatus,
-    string StatusColor
+    string StatusColor,
+    string Workshop
 );
 
     public record SheduleUpcomingTO(

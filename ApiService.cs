@@ -197,7 +197,7 @@ public class ApiService
     {
         try
         {
-            var result = await client.PostAsJsonAsync("/equipment/"+eqId, req);
+            var result = await client.PutAsJsonAsync("/equipment/"+eqId, req);
             var str = await result.Content.ReadAsStringAsync();
             return str;
         }

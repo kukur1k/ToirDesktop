@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ToirDesktop.Views;
 
 namespace ToirDesktop.ViewModels;
 
@@ -32,7 +36,7 @@ public partial class EquipmentViewModel : ViewModelBase
         _ = LoadTableAsync();
     }
 
-    private async Task<string> LoadTableAsync()
+    public async Task<string> LoadTableAsync()
     {
         //=======Пофиксить в АПИ и в ПРИЛОЖЕНИИ=======
         // Эндпоинты этой группы обеспечивают полный цикл
@@ -109,10 +113,28 @@ public partial class EquipmentViewModel : ViewModelBase
         _main.CurrentPage = new EqDetailsViewModel(_main, Convert.ToInt32(eqId));
     }
 
+     [RelayCommand]
+    public async Task EditEq()
+    {
+        var modal = new Window
+        {
+            Title = "Редактировать",
+            Width = 450,
+            Height = 450,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Content = new EditEqWindowView
+            {
+                DataContext = new EditEqWindowViewModel(_main, SelectedItem)
+            }
+        };
 
-    // [RelayCommand]
-    // public async Task PutEq(int eqID, EqRequest req)
-    // {
-    //     var error = await ApiService.Instance.PutEquipment(eqID, req);
-    // }
+        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
+            await modal.ShowDialog(desktop.MainWindow);
+        }
+
+        await LoadTableAsync();
+    }
+
+
 }
