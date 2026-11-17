@@ -102,6 +102,14 @@ public partial class EquipmentViewModel : ViewModelBase
         _ = await LoadTableAsync();
     }
 
+
+    
+     [RelayCommand]
+    public void GoToEqDetailPage(string eqId){
+        _main.CurrentPage = new EqDetailsViewModel(_main, Convert.ToInt32(eqId));
+    }
+
+
     // [RelayCommand]
     // public async Task PutEq(int eqID, EqRequest req)
     // {

@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ToirDesktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ToirDesktop.Views.EqDetailsView"
+             x:DataType="vm:EqDetailsViewModel">
+
+
+            <Grid ColumnDefinitions="*,200">
+              <StackPanel Spacing="10" Grid.Column="0">
+
+                <TextBlock Text="{Binding Title}" Margin="10" FontWeight="Bold"
+                FontSize="16" HorizontalAlignment="Center"></TextBlock>
+
+                <UserControl Content="{Binding CurrentPage}"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                Margin="10"></UserControl>
+
+              </StackPanel>
+
+              <StackPanel HorizontalAlignment="Center" Spacing="10" Margin="10 20" Grid.Column="1">
+                <Button HorizontalAlignment="Center" Content="Основная информация" Command="{Binding GoToMainEqInfoCommand}"></Button>
+                <Button HorizontalAlignment="Center" Content="История ТО" Command="{Binding GoToEqHistoryCommand}"></Button>
+                <Button HorizontalAlignment="Center" Content="Заявки" Command="{Binding GoToOrderHistoryCommand}"></Button>
+              </StackPanel>
+              
+            </Grid>
+
+</UserControl>

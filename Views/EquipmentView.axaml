@@ -49,11 +49,8 @@
                       <DataGridTemplateColumn Header="Действия" Width="*">
                           <DataTemplate>
                               <StackPanel Orientation="Horizontal">
-                                  <Button HorizontalAlignment="Stretch" Content="История ТО"
-                                          Command="{Binding $parent[UserControl].DataContext.GoToCardToCommand}"
-                                          CommandParameter="{Binding Id}"></Button>
-                                  <Button HorizontalAlignment="Stretch" Content="Заявки"
-                                          Command="{Binding $parent[UserControl].DataContext.GoToWoByEqCommand}"
+                                  <Button HorizontalAlignment="Stretch" Content="Информация"
+                                          Command="{Binding $parent[UserControl].DataContext.GoToEqDetailPageCommand}"
                                           CommandParameter="{Binding Id}"></Button>
                               </StackPanel>
                           </DataTemplate>
