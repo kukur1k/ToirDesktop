@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:ToirDesktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ToirDesktop.Views.EqInfoCardView"
+             x:DataType="vm:EqInfoCardViewModel">
+
+            <StackPanel Margin="15" Spacing="5">
+              <TextBlock FontSize="16" Text="{Binding Eq.Id}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.Name}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.Model}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.EqStatus}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.InventNumber}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.SerialNumber}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.Manufacture}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.DateStartExp}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.DateStartWork}"></TextBlock>
+              <TextBlock FontSize="16" Text="{Binding Eq.WarrancyTime}"></TextBlock>
+            </StackPanel>
+
+</UserControl>

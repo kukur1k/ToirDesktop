@@ -55,31 +55,31 @@
           "dependencies": {
             "Avalonia": {
               "target": "Package",
-              "version": "[11.3.11, )"
+              "version": "[12.1.4, )"
             },
             "Avalonia.Controls.DataGrid": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[12.1.2, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
-              "version": "[11.3.11, )"
-            },
-            "Avalonia.Diagnostics": {
-              "target": "Package",
-              "version": "[11.3.11, )"
+              "version": "[12.1.4, )"
             },
             "Avalonia.Fonts.Inter": {
               "target": "Package",
-              "version": "[11.3.11, )"
+              "version": "[12.1.4, )"
             },
             "Avalonia.Themes.Fluent": {
               "target": "Package",
-              "version": "[11.3.11, )"
+              "version": "[12.1.4, )"
             },
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "Flowery.NET": {
+              "target": "Package",
+              "version": "[4.0.0, )"
             }
           },
           "imports": [

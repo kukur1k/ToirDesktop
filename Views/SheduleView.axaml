@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Flowery.Controls;assembly=Flowery.NET"
+             xmlns:vm="using:ToirDesktop.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ToirDesktop.Views.SheduleView"
+             x:DataType="vm:SheduleViewModel">
+  
+             <ScrollViewer>
+                <StackPanel Spacing="5" Margin="15">
+
+              <TextBlock Grid.Row="0" Margin="0 15" Text="График ТО" FontSize="16" FontWeight="Bold"></TextBlock>
+
+              <controls:DaisyScheduler Margin="10" Padding="10"
+                CurrentView="Calendar"
+                SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+                FirstDayOfWeek="Monday"
+                IsReadOnly="True"
+                ShowToolbar="True"
+                Appointments="{Binding Appointments}"
+                Height="450"/>
+
+             <DataGrid Grid.Row="1" HorizontalScrollBarVisibility="Visible" GridLinesVisibility="All" BorderBrush="#666" BorderThickness="1"
+              IsReadOnly="True" CanUserResizeColumns="True" ItemsSource="{Binding FilteredShedule}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Оборудование" Width="Auto" Binding="{Binding EqName}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Вид ТО" Width="70" Binding="{Binding ToTitle}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Плановая дата" Width="Auto" Binding="{Binding Date}"></DataGridTextColumn>
+
+                    <DataGridTemplateColumn Header="Статус" Width="Auto">
+                        <DataTemplate>
+                          <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{Binding StatusColor}">
+                            <TextBlock Margin="15 10" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding StatusTo}"></TextBlock>
+                          </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn>
+
+                     <DataGridTextColumn Header="Ответственная бригада" Width="*" Binding="{Binding BrigadeName}"></DataGridTextColumn>
+
+                     <DataGridTemplateColumn Header="Действия" Width="Auto">
+                        <DataTemplate>
+                          <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Content="Изменить" Background="Transparent"></Button>
+                            <Button Content="Удалить" Background="Transparent"></Button>
+                            <Button Content="Создать заявку" Background="Transparent"></Button>
+                          </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                </DataGrid>
+
+             </StackPanel>
+             
+             </ScrollViewer>
+             
+</UserControl>

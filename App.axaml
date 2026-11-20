@@ -1,5 +1,6 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:daisy="clr-namespace:Flowery;assembly=Flowery.NET"
              x:Class="ToirDesktop.App"
              xmlns:local="using:ToirDesktop"
              RequestedThemeVariant="Light">
@@ -12,5 +13,6 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+        <daisy:DaisyUITheme/>
     </Application.Styles>
 </Application>

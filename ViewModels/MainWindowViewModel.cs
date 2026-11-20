@@ -42,6 +42,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
    [RelayCommand]
     public void GoToEquipmentPage() => CurrentPage = new EquipmentViewModel(this);
+
+    [RelayCommand]
+    public void GoToShedule() => CurrentPage = new SheduleViewModel(this);
     
     [RelayCommand]
     public void GoToHistoryCardPage(int eqId) => CurrentPage = new HistoryTOCardViewModel(this, eqId);

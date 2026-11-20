@@ -12,12 +12,21 @@
                 <StackPanel Margin="15">
 
                 <TextBox Text="{Binding EquipmentStr.Name}" Margin="5" Watermark="Наименование"></TextBox>
-                <TextBox Text="{Binding EquipmentStr.InvNumber}" Margin="5" Watermark="Инвентарный номер"></TextBox>
-                <TextBox Text="{Binding EquipmentStr.Manifacture}" Margin="5" Watermark="Производитель"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.InventNumber}" Margin="5" Watermark="Инвентарный номер"></TextBox>
+                <TextBox Text="{Binding EquipmentStr.Manufacture}" Margin="5" Watermark="Производитель"></TextBox>
                 <TextBox Text="{Binding EquipmentStr.Model}" Margin="5" Watermark="Модель"></TextBox>
                 <TextBox Text="{Binding EquipmentStr.SerialNumber}" Margin="5" Watermark="Серийный номер"></TextBox>
                 <TextBox Text="{Binding EquipmentStr.Workshop}" Margin="5" Watermark="Цех"></TextBox>
-                <ComboBox ItemsSource="{Binding Statuses}" Margin="5" SelectedItem="{Binding EquipmentStr.Status}"></ComboBox>
+                <ComboBox ItemsSource="{Binding Statuses}" Margin="5" SelectedItem="{Binding EquipmentStr.EqStatus}"></ComboBox>
+
+                <StackPanel Spacing="5">
+                        <TextBlock Text="Дата начала работы" />
+                        <DatePicker SelectedDate="{Binding EquipmentStr.DateStartWork, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel Spacing="5">
+                        <TextBlock Text="Дата начала эксплуатации" />
+                        <DatePicker SelectedDate="{Binding EquipmentStr.DateStartExp, Mode=TwoWay}" />
+                </StackPanel>
 
                 <Button Margin="5" HorizontalAlignment="Stretch" Content="Сохранить" Command="{Binding SaveEqCommand}"></Button>
 

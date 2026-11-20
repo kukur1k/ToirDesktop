@@ -65,7 +65,7 @@
             </Border>
             <Grid ColumnDefinitions="150,*" Grid.Row="1">
                 <Border Grid.Column="0" BorderThickness="1" BorderBrush="#666" Padding="1">
-                    <StackPanel Spacing="10">
+                    <StackPanel Spacing="10" Margin="0 10">
                         <Button Background="Transparent"
                          HorizontalAlignment="Center"
                           Command="{Binding GoToDashboardPageCommand}">
@@ -75,6 +75,11 @@
                           Command="{Binding GoToEquipmentPageCommand}"
                           HorizontalAlignment="Center">
                             <TextBlock Text="Оборудование"></TextBlock>
+                        </Button>
+                        <Button Background="Transparent"
+                          Command="{Binding GoToSheduleCommand}"
+                          HorizontalAlignment="Center">
+                            <TextBlock Text="ГрафикТО"></TextBlock>
                         </Button>
                     </StackPanel>
                 </Border>

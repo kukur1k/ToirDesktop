@@ -20,13 +20,14 @@ public partial class EqDetailsViewModel : ViewModelBase
     {
         _main = main;
         EqId = eqId;
-        GoToEqHistory();
+        GoToMainEqInfo();
     }
 
     [RelayCommand]
     public void GoToMainEqInfo()
     {
         Title = "Основная информация";
+        CurrentPage = new EqInfoCardViewModel(_main, EqId);
     }
 
     [RelayCommand]

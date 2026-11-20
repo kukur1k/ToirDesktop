@@ -41,16 +41,16 @@ public record HistoryCardTO(
 public class EqRequest
 {
     public int Id { get; set; }
-    public string? InvNumber { get; set; }
+    public string? InventNumber { get; set; }
     public string? Name { get; set; }
     public string? Model { get; set; }
-    public string? WorkStart { get; set; }
-    public DateOnly? ExpStart { get; set; }
-    public string? Manifacture { get; set; }
-    public DateOnly? Warrancy { get; set; }
+    public string? DateStartWork { get; set; }
+    public string? DateStartExp { get; set; }
+    public string? Manufacture { get; set; }
+    public string? WarrancyTime { get; set; }
     public string? SerialNumber { get; set; }
     public string? Workshop { get; set; }
-    public string? Status { get; set; }
+    public string? EqStatus { get; set; }
 }
 
 public record DashboardKPI(
@@ -85,6 +85,9 @@ public record EqTableItem(
     string DateStartWork,
     string EqStatus,
     string StatusColor,
+    string DateStartExp,
+    string SerialNumber,
+    string WarrancyTime,
     string Workshop
 );
 
@@ -108,3 +111,17 @@ public class User
 
     public string Role { get; set; } = null!;
 }
+
+public record SheduleToItem(
+    int Id,
+    string Date, 
+    int BrigadeId,
+    int EqId,
+    string StatusTo,
+    string StatusColor,
+    string ToTitle,
+    string BrigadeName,
+    string EqName
+);
+
+public record sheduleFiltersRequest(string? status, string? typeTo, DateOnly? dateStart, DateOnly? dateEnd);

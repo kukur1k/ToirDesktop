@@ -197,11 +197,29 @@ public class ApiService
     {
         try
         {
+             var json = System.Text.Json.JsonSerializer.Serialize(req);
+            Console.WriteLine($"PUT {eqId} body: {json}");
+
             var result = await client.PutAsJsonAsync("/equipment/"+eqId, req);
             var str = await result.Content.ReadAsStringAsync();
             return str;
         }
         catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+
+    public async Task<List<SheduleToItem>?> GetSheduleTo(sheduleFiltersRequest filters)
+    {
+        try
+        {
+            var res = await client.GetFromJsonAsync<ApiResponse<List<SheduleToItem>?>>("/Shedule-to/calendar-to");
+            Console.WriteLine(res.data);
+            return res.data;
+        } catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             return null;
